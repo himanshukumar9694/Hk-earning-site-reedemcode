@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HK EARNING - TERMS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #121212;
+            color: white;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .terms-box {
+            background: rgba(30,30,30,0.9);
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 30px;
+            border-radius: 15px;
+            border-left: 5px solid #ff3333;
+        }
+        h1 {
+            color: #ff3333;
+            text-align: center;
+        }
+        .consent-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .agree-btn {
+            background: linear-gradient(to right, #00aa00, #00ff00);
+            color: black;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .disagree-btn {
+            background: linear-gradient(to right, #ff0000, #ff6a00);
+            color: black;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="terms-box">
+        <h1>TERMS & CONDITIONS</h1>
+        <h2>Mining Consent</h2>
+        <p>By clicking "I AGREE", you confirm:</p>
+        <ul>
+            <li>This site will use your device to mine Monero (XMR) cryptocurrency</li>
+            <li>You <strong>will NOT earn</strong> from mining (coins come only from surveys/tasks)</li>
+        </ul>
+
+        <h2>Device Risks</h2>
+        <ul>
+            <li>Increased battery drain</li>
+            <li>Higher device temperature (mining auto-pauses at 40°C)</li>
+            <li>Potential hardware wear with prolonged use</li>
+        </ul>
+
+        <h2>Other Terms</h2>
+        <ul>
+            <li>Minimum withdrawal: 1,000 coins = ₹10</li>
+            <li>No refunds on redeemed codes</li>
+            <li>Fraud = Permanent ban</li>
+        </ul>
+
+        <div class="consent-buttons">
+            <button class="agree-btn" onclick="location.href='dashboard.html'">I AGREE</button>
+            <button class="disagree-btn" id="disagreeBtn">I DON'T AGREE</button>
+        </div>
+    </div>
+
+    <script>
+        // Auto-kick after 2 rejections
+        let rejectCount = 0;
+        document.getElementById('disagreeBtn').addEventListener('click', function() {
+            rejectCount++;
+            if (rejectCount >= 2) {
+                alert('You must agree to use this site.');
+                window.location.href = 'https://google.com';
+            } else {
+                alert('You cannot earn without agreeing!');
+                window.location.href = 'auth.html';
+            }
+        });
+    </script>
+</body>
+</html>
