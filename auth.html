@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HK EARNING - SIGNUP/LOGIN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .auth-box {
+            background: rgba(30,30,30,0.9);
+            width: 90%;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255,50,50,0.3);
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background: #222;
+            color: white;
+        }
+        button {
+            background: linear-gradient(to right, #ff3333, #ff6a00);
+            color: black;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 15px 0;
+            width: 100%;
+        }
+        .age-check {
+            margin: 15px 0;
+            text-align: left;
+        }
+        .switch-form {
+            margin-top: 20px;
+            color: #aaa;
+        }
+        .switch-form a {
+            color: #ff3333;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-box" id="signup-form">
+        <h2>SIGN UP</h2>
+        <input type="text" placeholder="First Name" required>
+        <input type="text" placeholder="Last Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <input type="password" placeholder="Confirm Password" required>
+        <div class="age-check">
+            <input type="checkbox" id="age" required>
+            <label for="age">I am 18+ and accept <a href="terms.html">Terms</a></label>
+        </div>
+        <button onclick="location.href='terms.html'">SIGN UP</button>
+        <div class="switch-form">
+            Already have an account? <a href="#" onclick="showLogin()">LOGIN</a>
+        </div>
+    </div>
+
+    <div class="auth-box" id="login-form" style="display:none">
+        <h2>LOGIN</h2>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button onclick="location.href='dashboard.html'">LOGIN</button>
+        <div class="switch-form">
+            New user? <a href="#" onclick="showSignup()">SIGN UP</a>
+        </div>
+    </div>
+
+    <script>
+        function showLogin() {
+            document.getElementById('signup-form').style.display = 'none';
+            document.getElementById('login-form').style.display = 'block';
+        }
+        function showSignup() {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('signup-form').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
