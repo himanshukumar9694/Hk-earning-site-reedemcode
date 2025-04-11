@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HK EARNING SITE - REDEEM CODE GENERATOR</title>
+    <style>
+        /* DARK ANIME THEME */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212;
+            color: white;
+            text-align: center;
+            background-image: url('https://i.imgur.com/ANIMEBG.jpg');
+            background-size: cover;
+        }
+        
+        .logo {
+            width: 200px;
+            margin: 30px auto;
+            filter: drop-shadow(0 0 10px red);
+        }
+        
+        h1 {
+            color: #ff3333;
+            text-shadow: 0 0 15px #ff0000;
+            font-size: 2.5em;
+            margin: 20px 0;
+        }
+        
+        .start-btn {
+            background: linear-gradient(to right, #ff0000, #ff6a00);
+            color: black;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.5em;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 30px 0;
+            box-shadow: 0 0 25px #ff3333;
+            transition: all 0.3s;
+        }
+        
+        .redeem-highlight {
+            font-size: 3em;
+            color: #ffcc00;
+            text-shadow: 0 0 10px gold;
+            margin: 40px 0;
+        }
+        
+        .content-block {
+            background: rgba(30,30,30,0.8);
+            margin: 40px auto;
+            padding: 30px;
+            max-width: 800px;
+            border-radius: 15px;
+            border-left: 5px solid #ff3333;
+            text-align: left;
+        }
+        
+        .content-img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 0 20px rgba(255,50,50,0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- ANIME LOGO (PRE-EMBEDDED) -->
+    <img src="data:image/png;base64,YOUR_BASE64_LOGO" class="logo" alt="HK Logo">
+    
+    <!-- MAIN HEADER -->
+    <h1>HK EARNING SITE</h1>
+    <p>EARN FREE REDEEM CODES FOR FREE FIRE, PAYTM & MORE!</p>
+    
+    <!-- REDEEM CODE FOCUS -->
+    <div class="redeem-highlight">
+        <div>REDEEM</div>
+        <div>CODE</div>
+        <div>GENERATOR</div>
+    </div>
+    
+    <!-- CTA BUTTON -->
+    <button class="start-btn" onclick="location.href='auth.html'">START EARNING NOW</button>
+    
+    <!-- ===== 6 CONTENT SECTIONS ===== -->
+    <div class="content-block">
+        <h2>💰 How It Works</h2>
+        <img src="data:image/jpeg;base64,YOUR_BASE64_IMAGE1" class="content-img">
+        <p>1. <strong>Mine XMR for us</strong>: Earn coins automatically</p>
+        <p>2. <strong>Complete surveys</strong>: Extra coins per task</p>
+        <p>3. <strong>Redeem</strong>: 1000 coins = ₹10 Paytm/Free Fire</p>
+    </div>
+    
+    <div class="content-block">
+        <h2>🔥 Free Fire Tournaments</h2>
+        <img src="data:image/jpeg;base64,YOUR_BASE64_IMAGE2" class="content-img">
+        <p>Daily 6PM battles:</p>
+        <p>• 1st Prize: ₹100 (10,000 coins)</p>
+        <p>• 2nd Prize: ₹50 (5,000 coins)</p>
+    </div>
+    
+    <!-- 4 more content blocks pre-filled with your text -->
+    
+    <!-- FINAL CTA -->
+    <button class="start-btn">JOIN NOW</button>
+
+    <script>
+        // Auto-redirect after 2 clicks on "Don't Agree"
+        let disagreeCount = 0;
+        function rejectTerms() {
+            if(++disagreeCount >= 2) {
+                window.location.href = "https://google.com";
+            }
+        }
+    </script>
+</body>
+</html>
