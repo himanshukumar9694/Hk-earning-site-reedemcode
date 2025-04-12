@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard - HK EARNING</title>
+  <style>
+    body { background: #121212; font-family: Arial; color: white; padding: 20px; }
+    h1 { text-align: center; color: #ff3333; }
+    .section {
+      background: rgba(30,30,30,0.95);
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      border-left: 4px solid #ff3333;
+    }
+    table { width: 100%; margin-top: 10px; border-collapse: collapse; }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #444;
+    }
+    input, button {
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      margin: 5px 0;
+    }
+    button {
+      background: linear-gradient(to right, #ff3333, #ff6a00);
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .note { font-size: 0.9em; color: #ccc; }
+  </style>
+</head>
+<body>
+
+  <h1>Admin Panel - HK EARNING</h1>
+
+  <div class="section">
+    <h2>👥 All Users (Example Data)</h2>
+    <table>
+      <tr><th>Name</th><th>Email</th><th>UID</th><th>Coins</th></tr>
+      <tr><td>Sunil</td><td>sunil@gmail.com</td><td>1234567890</td><td>1500</td></tr>
+      <tr><td>Ravi</td><td>ravi@gmail.com</td><td>1122334455</td><td>900</td></tr>
+    </table>
+    <p class="note">*Real user data connection will be added with Firebase or Google Sheet later</p>
+  </div>
+
+  <div class="section">
+    <h2>💸 Withdraw Requests</h2>
+    <table>
+      <tr><th>Name</th><th>Email</th><th>Amount</th><th>Action</th></tr>
+      <tr><td>Ravi</td><td>ravi@gmail.com</td><td>₹10</td><td><button>Mark as Sent</button></td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>🧮 Coin Editor</h2>
+    <input type="text" id="uid" placeholder="User UID">
+    <input type="number" id="amount" placeholder="Coins to Add/Remove">
+    <button onclick="editCoins()">UPDATE COINS</button>
+    <p class="note">*Update will reflect after full backend is linked</p>
+  </div>
+
+  <script>
+    function editCoins() {
+      const uid = document.getElementById('uid').value;
+      const amt = document.getElementById('amount').value;
+      alert(`Coins for UID ${uid} updated by ${amt} (demo only)`);
+    }
+  </script>
+
+</body>
+</html>
