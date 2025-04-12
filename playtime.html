@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Playtime - HK EARNING</title>
+  <style>
+    body {
+      background: #121212;
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 {
+      color: #ff3333;
+    }
+    .timer-box {
+      background: rgba(30,30,30,0.9);
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 400px;
+      margin: auto;
+      border-left: 5px solid #ff3333;
+    }
+    .time {
+      font-size: 2em;
+      margin: 20px 0;
+    }
+    button {
+      padding: 15px 30px;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(to right, #ff3333, #ff6a00);
+      color: black;
+      font-weight: bold;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+    .coins-earned {
+      margin-top: 15px;
+      font-size: 1.2em;
+      color: #00ff99;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎮 Play & Earn Coins</h1>
+  <div class="timer-box">
+    <div class="time" id="playtime">00:00</div>
+    <button onclick="togglePlay()"><span id="btn-text">START</span></button>
+    <div class="coins-earned">Coins Earned: <span id="earned">0</span></div>
+  </div>
+
+  <script>
+    let seconds = 0;
+    let timer;
+    let playing = false;
+    let earned = 0;
+
+    function togglePlay() {
+      if (!playing) {
+        timer = setInterval(() => {
+          seconds++;
+          document.getElementById('playtime').textContent = formatTime(seconds);
+          let coins = Math.floor(seconds * 0.041);
+          earned = coins;
+          document.getElementById('earned').textContent = earned;
+        }, 1000);
+        playing = true;
+        document.getElementById('btn-text').textContent = "STOP";
+      } else {
+        clearInterval(timer);
+        playing = false;
+        alert(`Total Coins Earned: ${earned}`);
+        document.getElementById('btn-text').textContent = "START";
+      }
+    }
+
+    function formatTime(secs) {
+      const min = Math.floor(secs / 60).toString().padStart(2, '0');
+      const sec = (secs % 60).toString().padStart(2, '0');
+      return `${min}:${sec}`;
+    }
+  </script>
+</body>
+</html>
