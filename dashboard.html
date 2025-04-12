@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HK EARNING - DASHBOARD</title>
+  <style>
+    body {
+      background: #121212;
+      font-family: Arial, sans-serif;
+      color: white;
+      margin: 0;
+    }
+    .header {
+      background: #1a1a1a;
+      padding: 15px;
+      text-align: center;
+      border-bottom: 2px solid #ff3333;
+    }
+    .header h1 { color: #ff3333; margin: 0; }
+
+    .coin-balance {
+      background: #222;
+      padding: 10px;
+      text-align: center;
+      font-size: 1.2em;
+    }
+
+    .nav-tabs {
+      display: flex;
+      background: #1a1a1a;
+    }
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 15px;
+      cursor: pointer;
+    }
+    .tab.active {
+      background: #ff3333;
+    }
+
+    .tab-content { display: none; padding: 20px; }
+    .tab-content.active { display: block; }
+
+    .section {
+      background: rgba(30,30,30,0.9);
+      padding: 15px;
+      margin: 15px 0;
+      border-left: 4px solid #ff3333;
+      border-radius: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: linear-gradient(to right, #ff3333, #ff6a00);
+      color: black;
+      border: none;
+      border-radius: 50px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .warning {
+      color: #ff3333;
+      font-weight: bold;
+      font-size: 0.9em;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>HK EARNING</h1>
+  </div>
+
+  <div class="coin-balance">Coins: <span id="coins">0</span></div>
+
+  <div class="nav-tabs">
+    <div class="tab active" onclick="switchTab('home')">HOME</div>
+    <div class="tab" onclick="switchTab('tournament')">TOURNAMENT</div>
+    <div class="tab" onclick="switchTab('withdraw')">WITHDRAW</div>
+    <div class="tab" onclick="switchTab('profile')">PROFILE</div>
+  </div>
+
+  <!-- HOME TAB -->
+  <div id="home" class="tab-content active">
+    <div class="section">
+      <h2>🛠️ Mining Control</h2>
+      <p>Status: <span id="mining-status">OFF</span></p>
+      <p>CPU Usage: <span id="cpu">0%</span></p>
+      <p class="warning">100% earnings to Admin | Users earn via tasks</p>
+      <button onclick="toggleMining()">START MINING</button>
+    </div>
+
+    <div class="section">
+      <h2>🎮 Playtime Earnings</h2>
+      <p>Earn ₹0.10/min for playing games</p>
+      <p>You get 41% = ₹0.041/min</p>
+      <button onclick="location.href='playtime.html'">START PLAYING</button>
+    </div>
+
+    <div class="section">
+      <h2>📝 Surveys & Tasks</h2>
+      <p>• Survey (5 mins) = 50 coins<br>• App Install = 200 coins</p>
+      <button>VIEW TASKS</button>
+    </div>
+
+    <div class="section">
+      <h2>📺 Watch Ads</h2>
+      <p>Earn 5 coins per ad</p>
+      <button>WATCH NOW</button>
+    </div>
+  </div>
+
+  <!-- TOURNAMENT TAB -->
+  <div id="tournament" class="tab-content">
+    <div class="section">
+      <h2>🏆 Tournament (6 PM Daily)</h2>
+      <p>1st: ₹100 | 2nd: ₹50 | 3rd: ₹20</p>
+      <div class="warning">
+        ⚠️ No hacks or panels — violators get banned forever 🖕👿
+      </div>
+      <button onclick="joinTournament()">JOIN (1000 coins)</button>
+      <p>New games: 2v2, Customs → Coming soon</p>
+    </div>
+  </div>
+
+  <!-- WITHDRAW TAB -->
+  <div id="withdraw" class="tab-content">
+    <div class="section">
+      <h2>💳 Redeem Code</h2>
+      <p>1000 coins = ₹10 redeem</p>
+      <p>Get code via email in 1 day or DOUBLE reward</p>
+      <button onclick="withdraw()">REQUEST NOW</button>
+      <h3 style="color:orange;">Coming soon:</h3>
+      <button disabled>Amazon | Flipkart | Diamonds</button>
+    </div>
+  </div>
+
+  <!-- PROFILE TAB -->
+  <div id="profile" class="tab-content">
+    <div class="section">
+      <h2>👤 Profile</h2>
+      <p>UID: <span id="user-uid">Not set</span></p>
+      <p>Total Earnings: <span id="total-earned">0 coins</span></p>
+      <button onclick="location.href='edit-profile.html'">EDIT PROFILE</button>
+    </div>
+  </div>
+
+  <script>
+    function switchTab(tabName) {
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.getElementById(tabName).classList.add('active');
+      document.querySelector(`.tab[onclick="switchTab('${tabName}')"]`).classList.add('active');
+    }
+
+    function toggleMining() {
+      const status = document.getElementById("mining-status");
+      const cpu = document.getElementById("cpu");
+      if (status.textContent === "OFF") {
+        status.textContent = "ON";
+        cpu.textContent = "65% (est.)";
+      } else {
+        status.textContent = "OFF";
+        cpu.textContent = "0%";
+      }
+    }
+
+    function joinTournament() {
+      const uid = prompt("Enter your Free Fire UID:");
+      if (uid && uid.length === 10) {
+        alert("Joined! ID & Pass will be sent before 6 PM.");
+      } else {
+        alert("Invalid UID. Must be 10 digits.");
+      }
+    }
+
+    function withdraw() {
+      alert("Request submitted. You'll get your code via email in 24 hours!");
+    }
+  </script>
+</body>
+</html>
