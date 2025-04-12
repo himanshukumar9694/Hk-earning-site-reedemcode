@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Login - HK EARNING</title>
+  <style>
+    body { background: #121212; font-family: Arial; color: white; text-align: center; padding: 50px; }
+    .box { background: #222; padding: 30px; max-width: 400px; margin: auto; border-radius: 15px; }
+    input, button {
+      width: 100%; padding: 12px; margin: 10px 0;
+      border: none; border-radius: 8px;
+    }
+    button { background: linear-gradient(to right, #ff3333, #ff6a00); font-weight: bold; color: black; }
+    h1 { color: #ff3333; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Admin Login</h1>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="pass" placeholder="Password">
+    <button onclick="login()">LOGIN</button>
+  </div>
+
+  <script>
+    function login() {
+      const email = document.getElementById("email").value;
+      const pass = document.getElementById("pass").value;
+
+      if (email === "himanshukumar969433@gmail.com" && pass === "Him2468101214") {
+        window.location.href = "admin-dashboard.html";
+      } else {
+        alert("Invalid credentials");
+      }
+    }
+  </script>
+</body>
+</html>
